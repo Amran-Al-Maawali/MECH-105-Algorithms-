@@ -1,0 +1,47 @@
+function [I] = Simpson(x, y)
+% Numerical evaluation of integral by Simpson's 1/3 Rule
+% Inputs
+%   x = the vector of equally spaced independent variable
+%   y = the vector of function values with respect to x
+% Outputs:
+%   I = the numerical integral calculated
+
+% Make that the lengths of the x and y inputs are equal
+
+[m,nX]=size(x);
+[m,nY]=size(y);
+if (nX ~= nY)
+error('the lengths of the input data is different');
+end
+if (nX < 2)
+error('incomplete length of the input data');
+end
+% control over the distance between points
+h = x(2) - x(1);
+for i=3:nX
+if (x(i)-x(i-1)) ~= h
+error('Uneven spacing for the x input');
+end
+end
+% Use Simpson's 1/3 Rule
+sum = y(1);
+for i=2:(nX-2)
+if mod(i,2)==0
+sum=sum+4*y(i);
+else
+sum=sum+2*y(i);
+end
+end
+% The final interval
+if mod(nX,2) == 0
+disp('WARNING! For the final interval, the trapezoidal rule must be applied');
+warning('There must be an odd number of intervals for the Simpson approximation. The final interval will be calculated using a trapezoidal rule');
+sum = sum + y(nX-1);
+I = (sum*h/3) + ((y(nX) + y(nX-1))*h/2);
+else
+sum = sum + 4*y(nX-1) + y(nX);
+I=sum*h/3;
+end
+disp('Integral =');
+disp(I);
+end
