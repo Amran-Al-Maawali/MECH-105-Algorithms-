@@ -1,4 +1,5 @@
 function [root, fx, ea, iter] = falsePosition(func, xl, xu, es, maxit, varargin)
+
 %falsePosition finds the root of a function using false position method
 
 if nargin<3
