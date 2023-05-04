@@ -24,6 +24,7 @@ outliers = sortedY < lower_bound | sortedY > upper_bound;
 cleaned_Y = sortedY(~outliers)
 cleaned_X = sortedX(~outliers)
 
+
 %   Outputs:
 %     1. fX: x-values with outliers removed
 %     2. fY: y-values with outliers removed
