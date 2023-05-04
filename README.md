@@ -1,3 +1,3 @@
-# MECH-105-Algorithms-
+# MECH-105-Algorithms
 This folder covers a number of algorithms that I have done in MECH 105. Firstly, I have done the False Position algorithm, which is a method for estimating the roots of a function using numerical procedures. The LU Decomposition algorithm is used to solve systems of linear equations. Linear regression is a type of statistical analysis for modeling the connection between two independent variables. Finally, the Simpsons Integration algorithm is a mathematical approach for calculating the area enclosed by a curve. This folder provides researchers with a variety of tools unique to their respective fields, each of which has distinct features that make them useful in their respective fields.
 
